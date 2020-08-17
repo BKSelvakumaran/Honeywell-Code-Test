@@ -1,0 +1,28 @@
+<div class="container">
+    <label for="uname"><b>Search</b></label>
+   
+    <input type="text" placeholder="Search" name="" id="txtSearch" [(ngModel)]='txtSearch'>
+    <input class="buttoncls" type="button" (click)="Search()" value="Search">
+
+  <input type="radio" id="ascending " name="sorting " value="ascending " (click)="AscendingOrder()" >
+  <label for="male">Ascending </label> 
+  <input type="radio" id="descending " name="sorting " value="descending" (click)="DescendingOrder()">
+  <label for="female">Descending </label><br>
+
+  </div>
+
+
+<table>
+    <tr style="font-weight:bold;">
+        <td>TITLE</td>
+        <td>STOCK</td>
+        <td>PRICE</td>
+        <td>SKU</td>
+    </tr>
+    <tr *ngFor="let item of ItemDetailsResult">
+       <td  style='width: 50%'>{{item.title}}</td>  
+       <td>{{item.stock}}</td>
+       <td>{{item.price}}</td>
+       <td>{{item.sku}}</td>
+    </tr>
+</table>
